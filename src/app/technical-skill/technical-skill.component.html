@@ -1,0 +1,27 @@
+<div class="maindiv">
+    <h1>Technical Expertise</h1>
+
+    <div class="arraydiv">
+        @for(techskill of arrays;track $index){
+        <div class="arrdiv2">
+            <div class="arraydiv3">
+                <div><img [src]="techskill.img" class="imgfield"></div>
+                <div class="textfield">{{techskill.Field}}</div>
+            </div>
+            
+         @for(skills of techskill.Skill;track $index){
+        <div class="array2div">
+            <div class="array2langtext">{{skills.Languages}}</div>
+            <div class="array2percent">{{skills.Percentage}}</div>
+        </div>
+
+            <div class="array2progess1 w3-light-grey w3-round">
+            <div class="w3-container w3-blue w3-round" [style.width]="skills.Percentage" [style.backgroundImage]="skills.color" class="array2progess2"></div>
+        </div>
+    }
+       
+    </div>
+        }
+    </div>
+    
+</div>

@@ -1,0 +1,79 @@
+.maindiv{
+  padding-top: 30px;
+  background-color: #0c0f16;
+  height: fit-content;
+  padding-bottom: 80px;
+}
+
+p{
+  font-size: 12px;
+}
+
+h1{
+    font-weight: bold;
+    color: white;
+    letter-spacing: 5px;
+    position: relative;
+    text-align: center;
+}
+
+h2{
+  font-weight: 400;
+  font-size: 24px;
+  margin-left: 10px;
+  font-family: cursive;
+}
+
+h3{
+    font-size: 23px;
+    color: #03A9F4;
+    margin: 10px 0;
+    font-family: cursive;
+}
+
+.boxdiv {
+  position: relative;
+  width: 400px;
+  background-color: #232323;
+  color: white;
+  padding: 25px;
+  overflow: hidden;
+  border-radius: 15px;
+  
+  box-shadow: 0px 0px 20px 5px rgba(55, 131, 189, 0.8), 0px 0px 50px 15px rgba(42, 60, 173, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxdiv::before {
+  content: '';
+  position: absolute;
+  width: 150%; /* बॉक्सपेक्षा मोठा आकार */
+  height: 150%;
+  background-image: conic-gradient(transparent, transparent, transparent, #50dfdb);
+  animation: rotate-border 6s linear infinite;
+}
+
+/* मधला भाग झाकण्यासाठी जेणेकरून फक्त कडेची बॉर्डर दिसेल */
+.boxdiv::after {
+  content: '';
+  position: absolute;
+  inset: 4px; /* ही तुमच्या बॉर्डरची जाडी असेल */
+  background: #232323;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+/* मजकूर वर दिसण्यासाठी */
+.content-area {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* फिरण्याचे ॲनिमेशन */
+@keyframes rotate-border {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

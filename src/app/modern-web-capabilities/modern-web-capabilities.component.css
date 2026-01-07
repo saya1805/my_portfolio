@@ -1,0 +1,41 @@
+.maindiv{
+  padding-top: 30px;
+  background-color: #0c0f16;
+  height: fit-content;
+}
+
+  h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    margin-top: 60px;
+  }
+
+  .arraydiv{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    color: white;
+    margin-left: 114px;
+}
+
+.imgMove{
+  width: 35px;
+  height: 30px;
+  /* border-radius: 50%; */
+  animation-name: myAnimation;
+  animation-iteration-count: infinite; 
+  animation-direction: alternate;
+  animation-duration: 4s;
+}
+
+/* @keyframes myAnimation {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(190px); 
+    }
+} */
+

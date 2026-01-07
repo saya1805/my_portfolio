@@ -1,0 +1,106 @@
+.maindiv{
+    padding-top: 70px;
+    background-color: #0c0f16;
+    height: fit-content;
+  }
+
+  h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    /* margin-top: 160px; */
+  }
+
+.arraydiv{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    color: white;
+    margin-left: 114px;
+}
+
+@keyframes move-stripes {
+    from {
+        background-position: 0 0; 
+    }
+    to {
+        background-position: 40px 0;
+    }
+}
+
+.arrdiv2{
+    background-color:rgba(33, 38, 45);
+    width: 320px;
+    /* height: 265px; */
+    min-height: 265px; 
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.arraydiv3{
+    display: flex;
+    padding-top: 10px;
+    gap: 8px;
+    align-items: center;
+}
+
+.imgfield{
+    width: 20px;
+    height: 20px;
+}
+
+.textfield{
+    color: white;
+    text-align: center;
+    font-weight: 600;
+}
+
+.array2div{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 5px 5px 5px;
+}
+
+.array2langtext{
+    font-size: 10px;
+}
+
+.array2percent{
+    font-size: 9px;
+    color: gray;
+}
+
+.array2progess1{
+    width:100%;
+    height: 8px;
+}
+
+.array2progess2{
+    height:100%
+}
+
+
+@media (max-width: 568px) {
+    h1 {
+        font-size: 1.5rem;
+        margin-top: 30px;
+    }
+
+    .arraydiv {
+        gap: 20px;
+        padding: 10px;
+        margin-left: 0; /* मोबाईलवर मार्जिन ० करा */
+    }
+
+    .arrdiv2 {
+        width: 100%; /* मोबाईलवर कार्ड पूर्ण विड्थ घेईल */
+        max-width: 350px;
+    }
+}
+  
