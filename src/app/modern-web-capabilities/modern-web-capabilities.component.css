@@ -2,6 +2,8 @@
   padding-top: 30px;
   background-color: #0c0f16;
   height: fit-content;
+  width: 100%; /* हे सुनिश्चित करा */
+  overflow-x: hidden; /* मोबाईलवर स्क्रोल येऊ नये म्हणून */
 }
 
   h1{
@@ -13,11 +15,13 @@
   }
 
   .arraydiv{
-    width: fit-content;
+    width: 90%;          /* विड्थ ९०% केली */
+    max-width: 1200px;   /* मॅक्सिमम विड्थ सेट केली */
+    /* width: fit-content; */
     height: fit-content;
     border-radius: 20px;
     color: white;
-    margin-left: 114px;
+    margin: 0 auto;
 }
 
 .imgMove{
@@ -28,6 +32,13 @@
   animation-iteration-count: infinite; 
   animation-direction: alternate;
   animation-duration: 4s;
+}
+
+@media (max-width: 768px) {
+  .arraydiv div[style*="display: flex"] {
+    flex-direction: column !important; /* मोबाईलवर कार्ड्स एकाखाली एक येतील */
+    align-items: center !important;
+  }
 }
 
 /* @keyframes myAnimation {

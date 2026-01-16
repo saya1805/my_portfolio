@@ -4,6 +4,7 @@
   padding-top: 70px;
   background-color: #0c0f16;
   height: fit-content;
+  overflow: hidden !important;
 }
 
 .namediv {
@@ -14,7 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: visible;
+  overflow: hidden !important;
 }
 
 /* नावामागचा मुख्य रंगीत प्रकाश (Mesh Glow) */
@@ -26,7 +27,8 @@
   transform: translate(-50%, -50%);
   
   /* जॉन डो टेम्पलेटमधील तंतोतंत आकार आणि रंग */
-  width: 900px; 
+  width: 100% !important;   /* मोबाईलवर स्क्रीनच्या बाहेर जाणार नाही */
+  max-width: 600px;
   height: 200px;
   
   /* डावीकडे Cyan/Blue आणि उजवीकडे Pink/Magenta */
@@ -79,12 +81,14 @@
 .webdiv1{
   width: 50px;
   height: 2px;
-  background-color:#0073d7;
+  /* background-color:#0073d7; */
+  background-color:#0073d7a3;
 }
 
 .webdiv2{
   font-size: 1.2rem;
-  color: #0073d7;
+  /* color: #0073d7; */
+  color:#0073d7a3;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -206,7 +210,7 @@ span{
 .atom-icon-container {
     position: absolute;
     /* इमेजप्रमाणे पोझिशन ॲडजस्ट करा */
-    left: 20%; 
+    left: 10%; 
     top: 20%;
     z-index: 10; /* ग्लोच्या वर येण्यासाठी मोठा नंबर */
      opacity: 0.5; 
@@ -238,6 +242,13 @@ span{
   
   /* ५. स्मूथनेससाठी */
   pointer-events: none; 
+  right: 10%; /* उजवीकडून १०% अंतरावर (बाहेर जाणार नाही) */
+  top: 25%;
+}
+
+.atom-icon-container-image img {
+  width: 50px; /* मोबाईलवर इमेजचा आकार थोडा लहान ठेवा */
+  height: auto;
 }
 
 
@@ -251,6 +262,13 @@ span{
     margin-top: 40px;
 }
 
+.rocketimg{
+  width: 110px;
+  height: 60px;
+  padding-left: 60px;
+  padding-top: 10px;
+}
+
 
 @media (max-width: 468px) {
   .namediv {
@@ -260,6 +278,7 @@ span{
   }
 
   .namediv h1 {
+    font-size: 2.2rem !important;
     font-weight: 800 !important;
     white-space: normal !important; 
     display: inline-block !important; 
@@ -267,6 +286,18 @@ span{
     max-width: 250px !important;    
     line-height: 1.2 !important;
     word-break: break-word !important;
+  }
+
+  
+  .divmove, 
+  .atom-icon-container, 
+  .atom-icon-container-image,
+  .rocketimg {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
   }
 
 }
@@ -309,4 +340,67 @@ span{
     /* gap: 20px !important;*/
     margin-top: 80px;
   }
+
+
 }
+
+.name-bounce-only {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  color: white; /* नावाचा मूळ रंग */
+  text-decoration: none;
+}
+
+/* माऊस नेल्यावर बाऊन्स होणे */
+.name-bounce-only:hover {
+  transform: scale(1.2); /* नाव थोडे मोठे होईल */
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36); /* बाऊन्स होण्यासाठी */
+  color: #00a2ff; /* बाऊन्स होताना रंग बदलायचा असेल तर हा ठेवा, नको असल्यास काढून टाका */
+}
+
+.hvr-float-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  cursor: pointer;
+  color: white;
+}
+
+/* २. सावलीसाठी (Shadow) खालचा लेयर */
+.hvr-float-shadow:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: "";
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  font-size: 22px;
+  /* अर्धवर्तुळाकार सावली तयार करणे */
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  transition-duration: 0.3s;
+  transition-property: transform, opacity;
+}
+
+/* ३. माऊस नेल्यावर नाव वर तरंगेल (Float) आणि सावली दिसेल */
+.hvr-float-shadow:hover, 
+.hvr-float-shadow:focus, 
+.hvr-float-shadow:active {
+  transform: translateY(-5px); /* नाव ५ पिक्सेल वर सरकेल */
+}
+
+.hvr-float-shadow:hover:before, 
+.hvr-float-shadow:focus:before, 
+.hvr-float-shadow:active:before {
+  opacity: 1;
+  transform: translateY(5px); /* सावली खाली येईल */
+}
+

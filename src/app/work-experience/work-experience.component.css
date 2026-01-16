@@ -1,97 +1,141 @@
-.maindiv{
+.maindiv {
   padding-top: 30px;
   background-color: #0c0f16;
   height: fit-content;
+  overflow-x: hidden !important; /* ही ओळ उजवीकडची पांढरी पट्टी घालवेल */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-h1{
-    color: white;
-    text-align: center;
-    margin-bottom: 30px;
-    font-weight: 600;
-    margin: 8px 8px 8px 28px;
+/* हेडलाईन्स आणि मजकुरातील मार्जिन कमी करा */
+h1, h2, h3, p {
+  color: white;
+  text-align: center;
+  margin: 10px 15px !important; /* मोबाईलवर २८px मार्जिन खूप जास्त होते, म्हणून १५px केले */
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin: 10px 15px !important; 
+  white-space: normal !important;        /* मजकूर एकाच ओळीत राहण्यापासून रोखते */
+    overflow-wrap: break-word !important;   /* मोठे शब्द तोडून खालच्या ओळीवर आणते */
+    word-wrap: break-word !important;
+    word-break: break-word;                 /* लांब मजकूर असेल तर ब्रेक करते */
+    max-width: 100%;/* मोबाईलवर २८px मार्जिन खूप जास्त होते, म्हणून १५px केले */
 }
 
 h2{
-    color:white;
-    font-size: 16px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    margin: 8px 8px 8px 28px;
+  color: white;
+  font-size: 16px;
+  text-align: left;
+  font-weight: 500;
+  margin: 10px 15px !important; 
+  white-space: normal !important;        /* मजकूर एकाच ओळीत राहण्यापासून रोखते */
+    overflow-wrap: break-word !important;   /* मोठे शब्द तोडून खालच्या ओळीवर आणते */
+    word-wrap: break-word !important;
+    word-break: break-word;                 /* लांब मजकूर असेल तर ब्रेक करते */
+    max-width: 100%;/* मोबाईलवर २८px मार्जिन खूप जास्त होते, म्हणून १५px केले */
+    display: block !important;
 }
 
 h3{
-    color: white;
-    font-size: 11px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    margin: 8px 8px 8px 28px;
+  color: white;
+  font-size: 12px;
+  text-align: left;
+  font-weight: 500;
+  margin: 10px 15px !important;
+  white-space: normal !important;        /* मजकूर एकाच ओळीत राहण्यापासून रोखते */
+    overflow-wrap: break-word !important;   /* मोठे शब्द तोडून खालच्या ओळीवर आणते */
+    word-wrap: break-word !important;
+    word-break: break-word;                 /* लांब मजकूर असेल तर ब्रेक करते */
+    max-width: 100%; /* मोबाईलवर २८px मार्जिन खूप जास्त होते, म्हणून १५px केले */
+    display: block !important;
 }
 
-span{
-    color:  rgb(16, 124, 212);
-    font-size: 11px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    margin: 8px 8px 8px 44px;
+ul{
+  color: rgb(155, 155, 155);
+  font-size: 11px;
+  white-space: normal !important;        /* मजकूर एकाच ओळीत राहण्यापासून रोखते */
+    overflow-wrap: break-word !important;   /* मोठे शब्द तोडून खालच्या ओळीवर आणते */
+    word-wrap: break-word !important;
+    word-break: break-word;                 /* लांब मजकूर असेल तर ब्रेक करते */
+    max-width: 100%;
+    display: block !important;
+}
+
+.h32nd{
+  color: rgb(69, 136, 224);
+  /* padding: 17px; */
+  font-size: 11px;
+  font-weight: 600;
+  white-space: normal !important;        /* मजकूर एकाच ओळीत राहण्यापासून रोखते */
+    overflow-wrap: break-word !important;   /* मोठे शब्द तोडून खालच्या ओळीवर आणते */
+    word-wrap: break-word !important;
+    word-break: break-word;                 /* लांब मजकूर असेल तर ब्रेक करते */
+    max-width: 100%;
+    display: block !important;
 }
 
 p{
-  color: rgb(181, 181, 181);
+  color: rgb(190 190 190);
   font-size: 10px;
-  margin: 8px 8px 8px 28px;
+  text-align: left;
+  margin: 10px 15px !important; /* मोबाईलवर २८px मार्जिन खूप जास्त होते, म्हणून १५px केले */
+  white-space: normal !important;        /* मजकूर एकाच ओळीत राहण्यापासून रोखते */
+    overflow-wrap: break-word !important;   /* मोठे शब्द तोडून खालच्या ओळीवर आणते */
+    word-wrap: break-word !important;
+    word-break: break-word;                 /* लांब मजकूर असेल तर ब्रेक करते */
+    max-width: 100%;
+    display: block !important;
 }
 
-li{
-  color: rgb(181, 181, 181);
-  font-size: 11px;
-}
-
-ul li::marker {
-    color: green; 
-}
-
-.divcard{
-  width: fit-content;
+/* कार्ड्सचा विभाग (सर्वात महत्त्वाचा बदल) */
+.divcard {
+  width:fit-content; /* फिक्स्ड विड्थ ऐवजी टक्केवारी वापरा */
+  max-width: 1000px;
   height: fit-content;
   background-color: #0c0f16;
-  margin-left: 200px;
-  margin-top: 30px;
+  margin: 30px auto !important; /* 'auto' मुळे कार्ड सेंटरला येईल, २००px काढले */
 }
 
-.divcard2{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.cartdiv{
+.cartdiv {
   display: flex;
   margin-bottom: 30px;
-  background-color:rgba(33, 38, 45);
+  background-color: rgba(33, 38, 45);
   border-radius: 10px;
+  overflow: hidden; /* इमेज कोपऱ्यातून बाहेर जाणार नाही */
 }
 
-.imagecss{
-  width: fit-content;
-  height:310px;
+/* इमेजेस रिस्पॉन्सिव्ह करा */
+.imagecss {
+  width: 100%; /* फिक्स्ड विड्थ काढली */
+  height: auto;
+  max-height: 310px;
+  object-fit: cover;
 }
 
-
-@media(max-width: 568px){
-  .divcard{
-    margin-left: 50px;
-    margin-right: 100px;
+/* मोबाईलसाठी (Media Query) */
+@media (max-width: 568px) {
+  .divcard {
+    margin: 20px auto !important;
+    width: 95% !important;
   }
 
-  .cartdiv{
-    display: flex;
-    flex-direction: column;
+  .cartdiv {
+    flex-direction: column; /* फोटो आणि माहिती एकाखाली एक येईल */
   }
 
-  .imagecss{
-    width: 555px;
+  .imagecss {
+    width: 100% !important; /* ५५५px काढून १००% केले, आता पांढरी पट्टी येणार नाही */
+    height: 200px !important;
+  }
+  
+  /* मोबाईलवर मजकूर डाव्या बाजूला अलाईन करण्यासाठी */
+  h1, h2, h3, p, span {
+    margin-left: 15px !important;
+    text-align: left !important;
   }
 }
-
-

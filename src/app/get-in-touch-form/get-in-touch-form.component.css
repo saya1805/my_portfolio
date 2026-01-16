@@ -3,6 +3,7 @@
   background-color: #0c0f16;
   height: fit-content;
   padding-bottom: 80px;
+  overflow-x: hidden;
 }
 
 p{
@@ -33,13 +34,14 @@ h3{
 
 .boxdiv {
   position: relative;
-  width: 400px;
+  width: 90%;          /* मोबाईलवर स्क्रीनच्या ९०% रुंदी घेईल */
+  max-width: 400px;
   background-color: #232323;
   color: white;
   padding: 25px;
   overflow: hidden;
   border-radius: 15px;
-  
+  box-sizing: border-box;
   box-shadow: 0px 0px 20px 5px rgba(55, 131, 189, 0.8), 0px 0px 50px 15px rgba(42, 60, 173, 0.4);
   display: flex;
   justify-content: center;
@@ -49,10 +51,23 @@ h3{
 .boxdiv::before {
   content: '';
   position: absolute;
-  width: 150%; /* बॉक्सपेक्षा मोठा आकार */
+  width: 200%; /* बॉक्सपेक्षा मोठा आकार */
   height: 150%;
   background-image: conic-gradient(transparent, transparent, transparent, #50dfdb);
   animation: rotate-border 6s linear infinite;
+}
+
+.email-btn {
+  width: fit-content;
+  background-color: white;
+  color: rgba(55, 131, 189, 0.8);
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin: 20px auto 0; /* margin-left: 110px काढून 'auto' केले */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 /* मधला भाग झाकण्यासाठी जेणेकरून फक्त कडेची बॉर्डर दिसेल */
@@ -76,4 +91,10 @@ h3{
 @keyframes rotate-border {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+  h2 { font-size: 18px; }
+  h3 { font-size: 16px; word-break: break-all; } /* मोठा ई-मेल आयडी तोडण्यासाठी */
+  p { font-size: 11px; }
 }
