@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 export class ArrayServiceService {
   technicalSkills=[
     {
-      'img':"../../assets/paint.png",
+      'img':"../../assets/angular.png",
+      'border':"#0b97da",
       'Field':"FrontEnd Development",
       'Skill':[
           {'Languages':"Angular",'Percentage':"95%","color": 'linear-gradient(to right, #2196F3, #0b4779ff)'},
@@ -17,7 +18,8 @@ export class ArrayServiceService {
       
     },
     {
-      'img':"../../assets/highvoltage.png",
+      'img':"../../assets/database.png",
+      'border':"#029002",
       'Field':"Backend & APIs",
      'Skill':[
           {'Languages':"Asp .Net Core",'Percentage':"75%","color": 'linear-gradient(to right, #8BC34A, #547555ff)'},
@@ -27,7 +29,8 @@ export class ArrayServiceService {
       ]
     },
     {
-      'img':"../../assets/rocket.png",
+      'img':"../../assets/rockett.png",
+      'border':"#a159ff",
       'Field':"Performance & DevOps",
       'Skill':[
           {'Languages':"Performance Optimization",'Percentage':"85%","color": 'linear-gradient(to right, #a34ef3ff, #4e24a2ff)'},
@@ -46,7 +49,8 @@ export class ArrayServiceService {
       'Accessibilty':"100",
       'Matrix':"System Stability",
       'matrixnumber':"100",
-      'Technical':"Utilized Angular functionalities (Pipes, Directives, Routing) for efficient data structuring.\nGenerated professional PDF documents/reports using the jsPDF library.\nEnsured Project Coordination with Business and Underwriting teams for effective solution delivery.\nManaged Version Control (Git) and prepared comprehensive Technical Documentation."
+      'border':"#0b97da",
+      'Technical':"Expertise in .NET Core APIs and SQL Databases, managing everything from Full-Stack troubleshooting to IIS deployment."
     },
     {
       'project':"Rinraksha System Optimization & Backend",
@@ -55,7 +59,8 @@ export class ArrayServiceService {
       'Accessibilty':"100",
       'Matrix':"System Stability",
       'matrixnumber':"100",
-      'Technical':"Developed and integrated robust APIs using .NET Core.\nDirectly interacted with the SQL Database for efficient data fetching and management.\nUsed integrated Full-Stack ownership to diagnose and resolve cross-layer issues promptly.\nResponsible for Unit testing, project building, and IIS server publishing/deployment."
+      'border':"#029002",
+      'Technical':"Skilled in architecting robust .NET Core APIs and optimizing SQL Database operations, with a strong focus on Full-Stack resolution and seamless IIS server deployment."
     },
     {
       'project':"Oil Tank Management System",
@@ -64,7 +69,8 @@ export class ArrayServiceService {
       'Accessibilty':"100",
       'Matrix':"System Stability",
       'matrixnumber':"100",
-      'Technical':"Performed precise calculation of tank measurements using a specific formula.\nImplemented Robust Authorization and Authentication (including automatic email/OTP generation).\nUtilized a SQL database for data storage and supported flexible database migration."
+      'border':"#a159ff",
+      'Technical':"Developed automated Tank Calculation tools, secured applications with OTP-based Authentication, and managed scalable SQL data storage with seamless migrations."
     },
     {
       'project':"B2B E-commerce & Diverse Web Applications",
@@ -73,7 +79,8 @@ export class ArrayServiceService {
       'Accessibilty':"100",
       'Matrix':"System Stability",
       'matrixnumber':"100",
-      'Technical':"Effective use of core Angular features like Reactive Forms and HTTP Client API integration.\nDesigned Responsive and Maintainable layouts using HTML grids.\nDeveloped key features including a feature-rich email application (with spam filtering), a B2B e-commerce platform (for product management), and a chat application.\nFocused on delivering impactful and functional front-end solutions."
+      'border':"#0b97da",
+      'Technical':"Proficient in leveraging Angular's Reactive Forms and HTTP Client to architect scalable front-end systems, featuring a high-performance B2B E-commerce engine, real-time Chat modules, and an intelligent Email client with spam filtering."
     }
   ]
 
@@ -81,27 +88,32 @@ export class ArrayServiceService {
     {
       'modernImg':"../../assets/pwa.gif",
       'label':"Progressive Web App(PWA)",
-      'keyPoints':"Management\nDesign/Crafting\nIntegrity\nReliability"
+      'keyPoints':"Management\nDesign/Crafting\nIntegrity\nReliability",
+      'border':"#0b97da",
     },
     {
       'modernImg':"../../assets/RealTime.gif",
       'label':"Real-time Features",
-      'keyPoints':"Monitoring\nprecise calculation mechanisms\nAPI Development\nData Handling/Data Transaction"
+      'keyPoints':"Monitoring\nprecise calculation mechanisms\nAPI Development\nData Handling/Data Transaction",
+      'border':"#029002",
     },
     {
       'modernImg':"../../assets/B_Api.gif",
       'label':"Browser APIs",
-      'keyPoints':"PDF Generation\nAngular's Forms\nHTTP Client API Integration\nFeatures/Core Components"
+      'keyPoints':"PDF Generation\nAngular's Forms\nHTTP Client API Integration\nFeatures/Core Components",
+      'border':"#a159ff",
     },
     {
       'modernImg':"../../assets/performance.gif",
       'label':"Performance",
-      'keyPoints':"Unit Testing\nCompilation\nEnd-to-End Optimization."
+      'keyPoints':"Unit Testing\nCompilation\nEnd-to-End Optimization.",
+      'border':"#0b97da",
     },
     {
       'modernImg':"../../assets/security.gif",
       'label':"Security",
-      'keyPoints':"Versioning\nAuthentication\nCryptography"
+      'keyPoints':"Versioning\nAuthentication\nCryptography",
+      'border':"#a159ff",
     }
   ]
 

@@ -3,7 +3,7 @@
 
     <div class="arraydiv">
         @for(techskill of arrays;track $index){
-        <div class="arrdiv2">
+        <div class="arrdiv2" [style.border]="'1px solid ' + techskill.border">
             <div class="arraydiv3">
                 <div><img [src]="techskill.img" class="imgfield"></div>
                 <div class="textfield">{{techskill.Field}}</div>

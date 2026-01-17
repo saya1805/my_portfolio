@@ -5,17 +5,52 @@
   background-color: #0c0f16;
   height: fit-content;
   overflow: hidden !important;
+  background-image: url(../../assets/background.png);
+  /* background-image: url('तुमच्या-इमेजचा-पाथ'); */
+  background-size: cover;      /* इमेज कापता कामा नये आणि पूर्ण जागा व्यापली पाहिजे */
+  background-position: center; /* इमेज मध्यभागी ठेवण्यासाठी */
+  background-repeat: no-repeat;
+  height:fit-content;               /* किंवा तुम्हाला हवी तेवढी उंची */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 .namediv {
   position: relative;
   width: 100%;
-  min-height: 250px;
-  background: #0c0f16; /* टेम्पलेटचा डार्क बॅकग्राउंड */
+  min-height: 150px;
+  /* background: #0c0f16;  */
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden !important;
+}
+
+.title-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dev-title {
+  color: white; /* निळसर टेक कलर जो डार्क बॅकग्राउंडवर उठून दिसतो */
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 0 15px;
+  font-size: 1rem;
+}
+
+/* दोन्ही बाजूला रेषा देण्यासाठी */
+.line {
+  height: 1px;
+  width: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 /* नावामागचा मुख्य रंगीत प्रकाश (Mesh Glow) */
@@ -31,33 +66,15 @@
   max-width: 600px;
   height: 200px;
   
-  /* डावीकडे Cyan/Blue आणि उजवीकडे Pink/Magenta */
-  background: 
-    radial-gradient(
-      circle at 25% 50%, 
-      rgba(0, 162, 255, 0.5) 0%,   /* व्हायब्रंट निळा */
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 75% 50%, 
-      rgba(255, 0, 102, 0.45) 0%,  /* डार्क हॉट पिंक */
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 50% 50%, 
-      rgba(115, 36, 184, 0.9) 0%,  /* मध्यभागी हलका जांभळा शेड */
-      transparent 60%
-    );
-  
   filter: blur(60px); /* रंगांना मऊ (diffused) करण्यासाठी */
   z-index: 0;
   pointer-events: none;
 }
 
 .namediv h1 {
-  font-family: 'Inter', 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 3rem; /* जॉन डो प्रमाणे मोठा फॉन्ट */
-  font-weight: 900;
+  /* font-weight: 900; */
   color: white;
   white-space: normal;        /* सर्वात महत्त्वाचे: यामुळे टेक्स्ट रॅप होईल */
   overflow-wrap: break-word;  /* मोठे शब्द तोडण्यासाठी */
@@ -122,12 +139,12 @@ span{
   margin: 5px !important;
   /* margin-left: 10px !important;
   margin-bottom: 15px; */
-  background-color: rgba(67, 67, 67, 0.765);
+  /* background-color: gray; */
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;;
 }
 
 .box-1 { 
-  background-color: #0c0f16;
+  /* background-color: #0c0f16; */
   position: relative; 
 }
 
@@ -260,6 +277,7 @@ span{
     gap: 30px;               /* दोन बटन्समधील अंतर */
     width: 100%;
     margin-top: 40px;
+    margin-bottom: 30px;
 }
 
 .rocketimg{
@@ -370,6 +388,9 @@ span{
   transition-property: transform;
   cursor: pointer;
   color: white;
+  font-size: 37px;
+  padding-left: 15px;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* २. सावलीसाठी (Shadow) खालचा लेयर */

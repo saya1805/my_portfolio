@@ -1,6 +1,15 @@
 .maindiv {
   padding-top: 30px;
-  background-color: #0c0f16;
+  background-image: url(../../assets/background.png);
+  /* background-image: url('तुमच्या-इमेजचा-पाथ'); */
+  background-size: cover;      /* इमेज कापता कामा नये आणि पूर्ण जागा व्यापली पाहिजे */
+  background-position: center; /* इमेज मध्यभागी ठेवण्यासाठी */
+  background-repeat: no-repeat;
+  height:fit-content;               /* किंवा तुम्हाला हवी तेवढी उंची */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: fit-content;
   overflow-x: hidden !important; /* ही ओळ उजवीकडची पांढरी पट्टी घालवेल */
   display: flex;
@@ -19,6 +28,7 @@ h1, h2, h3, p {
 h1 {
   color: white;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
   margin: 10px 15px !important; 
   white-space: normal !important;        /* मजकूर एकाच ओळीत राहण्यापासून रोखते */
     overflow-wrap: break-word !important;   /* मोठे शब्द तोडून खालच्या ओळीवर आणते */
@@ -28,17 +38,22 @@ h1 {
 }
 
 h2{
-  color: white;
-  font-size: 16px;
-  text-align: left;
-  font-weight: 500;
-  margin: 10px 15px !important; 
-  white-space: normal !important;        /* मजकूर एकाच ओळीत राहण्यापासून रोखते */
-    overflow-wrap: break-word !important;   /* मोठे शब्द तोडून खालच्या ओळीवर आणते */
+ color: white;
+    padding-top: 19px;
+    padding-left: 21px;
+    /* padding: 21px; */
+    font-size: 18px;
+    text-align: left;
+    font-weight: 500;
+    margin: 12px;
+    /* margin: 10px 15px !important; */
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
     word-wrap: break-word !important;
-    word-break: break-word;                 /* लांब मजकूर असेल तर ब्रेक करते */
-    max-width: 100%;/* मोबाईलवर २८px मार्जिन खूप जास्त होते, म्हणून १५px केले */
+    word-break: break-word;
+    max-width: 100%;
     display: block !important;
+    margin: 12px;
 }
 
 h3{
@@ -64,57 +79,37 @@ ul{
     word-break: break-word;                 /* लांब मजकूर असेल तर ब्रेक करते */
     max-width: 100%;
     display: block !important;
+    margin-top: 45px;
 }
 
-.h32nd{
-  color: rgb(69, 136, 224);
-  /* padding: 17px; */
-  font-size: 11px;
-  font-weight: 600;
-  white-space: normal !important;        /* मजकूर एकाच ओळीत राहण्यापासून रोखते */
-    overflow-wrap: break-word !important;   /* मोठे शब्द तोडून खालच्या ओळीवर आणते */
-    word-wrap: break-word !important;
-    word-break: break-word;                 /* लांब मजकूर असेल तर ब्रेक करते */
-    max-width: 100%;
-    display: block !important;
-}
 
-p{
-  color: rgb(190 190 190);
-  font-size: 10px;
-  text-align: left;
-  margin: 10px 15px !important; /* मोबाईलवर २८px मार्जिन खूप जास्त होते, म्हणून १५px केले */
-  white-space: normal !important;        /* मजकूर एकाच ओळीत राहण्यापासून रोखते */
-    overflow-wrap: break-word !important;   /* मोठे शब्द तोडून खालच्या ओळीवर आणते */
-    word-wrap: break-word !important;
-    word-break: break-word;                 /* लांब मजकूर असेल तर ब्रेक करते */
-    max-width: 100%;
-    display: block !important;
-}
 
 /* कार्ड्सचा विभाग (सर्वात महत्त्वाचा बदल) */
 .divcard {
   width:fit-content; /* फिक्स्ड विड्थ ऐवजी टक्केवारी वापरा */
   max-width: 1000px;
   height: fit-content;
-  background-color: #0c0f16;
+  /* background-color: #0c0f16; */
   margin: 30px auto !important; /* 'auto' मुळे कार्ड सेंटरला येईल, २००px काढले */
 }
 
 .cartdiv {
   display: flex;
   margin-bottom: 30px;
-  background-color: rgba(33, 38, 45);
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid green;
+  /* background-color: rgba(33, 38, 45); */
   border-radius: 10px;
   overflow: hidden; /* इमेज कोपऱ्यातून बाहेर जाणार नाही */
 }
 
 /* इमेजेस रिस्पॉन्सिव्ह करा */
 .imagecss {
-  width: 100%; /* फिक्स्ड विड्थ काढली */
-  height: auto;
-  max-height: 310px;
-  object-fit: cover;
+     width: 140px;
+    height: 143px;
+    max-height: 310px;
+    object-fit: cover;
+    margin: 34px;
 }
 
 /* मोबाईलसाठी (Media Query) */
@@ -138,4 +133,22 @@ p{
     margin-left: 15px !important;
     text-align: left !important;
   }
+}
+
+.progress-container {
+    width: 70px;
+    background-color: #333; /* डार्क बॅकग्राउंड */
+    border-radius: 10px;
+    height: 5px; /* बारची जाडी */
+    margin-top: 5px;
+    margin-left: 15px;
+    overflow: hidden;
+}
+
+/* मुख्य प्रोग्रेस बार */
+.progress-bar {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out; /* ॲनिमेशनसाठी */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* थोडी सावली */
 }

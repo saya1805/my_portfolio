@@ -1,6 +1,10 @@
 .maindiv{
   padding-top: 30px;
-  background-color: #0c0f16;
+  background-image: url(../../assets/background.png);
+  /* background-image: url('तुमच्या-इमेजचा-पाथ'); */
+  background-size: cover;      /* इमेज कापता कामा नये आणि पूर्ण जागा व्यापली पाहिजे */
+  background-position: center; /* इमेज मध्यभागी ठेवण्यासाठी */
+  background-repeat: no-repeat;
   height: fit-content;
   padding-bottom: 80px;
   overflow-x: hidden;

@@ -3,26 +3,40 @@
     <div class="divcard">
         <div class="divcard2">
             @for(workarr of workarray;track $index){
-                <div class="cartdiv">
+                <div class="cartdiv" [style.border]="'1px solid ' + workarr.border">
                 <div style="width: 500px;">
-                <h2>{{workarr.project}}</h2>
-                <p>{{workarr.pSummary}}</p>
-                <h3>Performance Metrix</h3>
+                <h2 [innerHTML]="workarr.project"></h2>
                 <div style="display: flex;justify-content: space-around;">
-                    <div><span class="h32nd">{{workarr.performace}}</span><br><p>Performance</p></div>
-                    <div><span class="h32nd">{{workarr.Accessibilty}}</span><br><p>Accessibilty</p></div>
-                    <div><span class="h32nd">{{workarr.matrixnumber}}</span><br><p>{{workarr.Matrix}}</p></div>
-                </div>
-                <h3 style="color: white;">Technical Implementaion</h3>
-                <ul>
-                    @for(textbullets of workarr.TechnicalBullets;track $index){
-                    <li>{{textbullets}}</li>
-                    }
-                </ul>
+                    <div>
+                        <p style="color: gray;font-size: 11px;">Performance</p>
+                        <p style="font-size: 11px;">{{workarr.performace}}</p>
+                        <div class="progress-container">
+        <div class="progress-bar" 
+             style="width: 50%;"
+             [style.background]="workarr.border">
+        </div>
+    </div>
+                    </div>
 
+                    <div><p style="color: gray;font-size: 11px;">Accessibilty</p><p style="font-size: 11px;">{{workarr.Accessibilty}}</p>
+                      <div class="progress-container">
+        <div class="progress-bar" 
+             style="width: 70%;" 
+             [style.background]="workarr.border">
+        </div>
+    </div></div>
+                    <div><p style="color: gray;font-size: 11px;">{{workarr.Matrix}}</p><p style="font-size: 11px;">{{workarr.matrixnumber}}</p>
+                      <div class="progress-container">
+        <div class="progress-bar" 
+             style="width: 50%;"
+             [style.background]="workarr.border">
+        </div>
+    </div></div>
+                </div>
+                <ul>{{workarr.Technical}}</ul>
                 </div>
                  <div>
-                    <img src="../../assets/coding-img.png" class="imagecss">
+                    <img src="../../assets/codingImg.png" class="imagecss">
                  </div>
                  </div>
             }
