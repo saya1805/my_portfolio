@@ -367,6 +367,10 @@ span{
     height: 12px;
   }
 
+  .hvr-float-shadow::before{
+    font-size: 16px !important;
+  }
+
   .buttonmaindiv{
     flex-direction: column !important;
     align-items: center !important;  
