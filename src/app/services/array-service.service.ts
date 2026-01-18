@@ -50,7 +50,7 @@ export class ArrayServiceService {
       'Matrix':"System Stability",
       'matrixnumber':"100",
       'border':"#0b97da",
-      'Technical':"Expertise in .NET Core APIs and SQL Databases, managing everything from Full-Stack troubleshooting to IIS deployment."
+      'Technical':"Developed and integrated robust APIs using .NET Core.Directly interacted with the SQL Database for efficient data fetching and management.Used integrated Full-Stack ownership to diagnose and resolve cross-layer issues promptly.Responsible for Unit testing, project building, and IIS server publishing/deployment."
     },
     {
       'project':"Rinraksha System Optimization & Backend",
@@ -60,7 +60,7 @@ export class ArrayServiceService {
       'Matrix':"System Stability",
       'matrixnumber':"100",
       'border':"#029002",
-      'Technical':"Skilled in architecting robust .NET Core APIs and optimizing SQL Database operations, with a strong focus on Full-Stack resolution and seamless IIS server deployment."
+      'Technical':"Performed precise calculation of tank measurements using a specific formula.Implemented Robust Authorization and Authentication (including automatic email/OTP generation).Utilized a SQL database for data storage and supported flexible database migration."
     },
     {
       'project':"Oil Tank Management System",
@@ -70,7 +70,7 @@ export class ArrayServiceService {
       'Matrix':"System Stability",
       'matrixnumber':"100",
       'border':"#a159ff",
-      'Technical':"Developed automated Tank Calculation tools, secured applications with OTP-based Authentication, and managed scalable SQL data storage with seamless migrations."
+      'Technical':"Effective use of core Angular features like Reactive Forms and HTTP Client API integration.Designed Responsive and Maintainable layouts using HTML grids.Developed key features including a feature-rich email application (with spam filtering), a B2B e-commerce platform (for product management), and a chat application."
     },
     {
       'project':"B2B E-commerce & Diverse Web Applications",

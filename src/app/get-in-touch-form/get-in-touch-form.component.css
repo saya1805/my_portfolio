@@ -15,9 +15,9 @@ p{
 }
 
 h1{
-    font-weight: bold;
+    /* font-weight: bold; */
     color: white;
-    letter-spacing: 5px;
+    /* letter-spacing: 5px; */
     position: relative;
     text-align: center;
 }

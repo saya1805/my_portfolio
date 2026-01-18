@@ -1,20 +1,16 @@
 .maindiv{
-  display: flex;
-  justify-content: center;
-  padding-top: 70px;
-  background-color: #0c0f16;
-  height: fit-content;
-  overflow: hidden !important;
-  background-image: url(../../assets/background.png);
-  /* background-image: url('तुमच्या-इमेजचा-पाथ'); */
-  background-size: cover;      /* इमेज कापता कामा नये आणि पूर्ण जागा व्यापली पाहिजे */
-  background-position: center; /* इमेज मध्यभागी ठेवण्यासाठी */
-  background-repeat: no-repeat;
-  height:fit-content;               /* किंवा तुम्हाला हवी तेवढी उंची */
-  width: 100%;
-  display: flex;
-  justify-content: center;
+ display: flex;
+  flex-direction: column; /* मोबाईलवर घटक एकाखाली एक येतील */
   align-items: center;
+  justify-content: flex-start; /* वरून सुरुवात करण्यासाठी */
+  padding: 40px 20px;
+  background-color: #0c0f16;
+  background-image: url(../../assets/background.png);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* पूर्ण स्क्रीन उंची व्यापण्यासाठी */
+  width: 100%;
+  overflow-x: hidden;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
@@ -287,6 +283,25 @@ span{
   padding-top: 10px;
 }
 
+@media (max-width: 480px) {
+    /* सर्व तरंगणाऱ्या इमेजेस आणि आयकॉन्स लपवण्यासाठी */
+    .divmove, 
+    .atom-icon-container, 
+    .atom-icon-container-image,
+    .rocketimg,
+    .box-1 .divmove {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+    /* मुख्य कंटेनरमधून ओव्हरफ्लो काढण्यासाठी */
+    .maindiv {
+        overflow-x: hidden !important;
+        width: 100vw;
+    }
+}
+
 
 @media (max-width: 468px) {
   .namediv {
@@ -425,3 +440,16 @@ span{
   transform: translateY(5px); /* सावली खाली येईल */
 }
 
+@media (min-width: 768px) {
+  .maindiv {
+    flex-direction: row; /* मोठ्या स्क्रीनवर आडवे दिसण्यासाठी */
+    justify-content: center;
+  }
+}
+
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+}
