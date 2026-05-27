@@ -147,7 +147,11 @@ span.name-bounce-only:hover {
 
 .btn-one button:hover {
   letter-spacing: 1px;
-  background: #0073d7;
+  /* background: #00a2ff; */
+  background: transparent;
+  border: 1px solid #00a2ff;
+  /* color: black; */
+  /* background: #7f5df0; */
   box-shadow: 0 0 15px rgba(0, 115, 215, 0.4);
 }
 

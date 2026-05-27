@@ -9,23 +9,33 @@ import { Component } from '@angular/core';
 })
 export class FrontPageComponent {
 
-  private readonly targetSectionId = 'workExperienceSection';
 
   constructor(){}
 
   ngOninit(){}
 
   scrollToWork() {
-    this.scrollToSection(this.targetSectionId);
+    this.scrollToSection('workExperienceSection');
   }
 
-  // स्क्रोलिंग लॉजिक (हा फंक्शन थेट id वापरून स्क्रोल करेल)
+  scrolltoproject(){
+    this.scrollToSection('ProjectWorkSection');
+  }
+
+  scrolltoprojectmodern(){
+    this.scrollToSection('ProjectWorkSectionmodern');
+  }
+
+  scrolltoprojecttech(){
+    this.scrollToSection('ProjectWorkSectiontech');
+  }
+
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ 
-        behavior: 'smooth', // ⬅️ स्मूथ ॲनिमेशनसाठी
-        block: 'start'      // ⬅️ सेक्शन स्क्रीनच्या वरच्या बाजूला दिसेल
+        behavior: 'smooth', 
+        block: 'start'    
       });
     }
   }
