@@ -1,31 +1,65 @@
-.maindiv{
- display: flex;
-  flex-direction: column; /* मोबाईलवर घटक एकाखाली एक येतील */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;700&display=swap');
+
+/* मुख्य कंटेनर */
+.maindiv {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* वरून सुरुवात करण्यासाठी */
+  justify-content: center;
   padding: 40px 20px;
   background-color: #0c0f16;
   background-image: url(../../assets/background.png);
   background-size: cover;
   background-position: center;
-  min-height: 100vh; /* पूर्ण स्क्रीन उंची व्यापण्यासाठी */
+  min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
+/* नाव असलेला कंटेनर */
 .namediv {
   position: relative;
   width: 100%;
-  min-height: 150px;
-  /* background: #0c0f16;  */
+  min-height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden !important;
+  text-align: center;
 }
 
+.name-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.name-container {
+  margin: 0;
+}
+
+/* मुख्य नाव इफेक्ट */
+.hvr-float-shadow.main-name {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  display: inline-block;
+  transform: perspective(1px) translateZ(0);
+  transition-duration: 0.3s;
+  transition-property: transform;
+  cursor: pointer;
+}
+
+.hvr-float-shadow:hover {
+  transform: translateY(-5px);
+}
+
+/* सबटायटल (Developer) */
 .title-section {
   display: flex;
   align-items: center;
@@ -34,426 +68,172 @@
 }
 
 .dev-title {
-  color: white; /* निळसर टेक कलर जो डार्क बॅकग्राउंडवर उठून दिसतो */
+  color: #0073d7;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 5px;
   margin: 0 15px;
   font-size: 1rem;
+  font-weight: 600;
 }
 
-/* दोन्ही बाजूला रेषा देण्यासाठी */
-.line {
-  height: 1px;
-  width: 50px;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-/* नावामागचा मुख्य रंगीत प्रकाश (Mesh Glow) */
-.namediv::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-  /* जॉन डो टेम्पलेटमधील तंतोतंत आकार आणि रंग */
-  width: 100% !important;   /* मोबाईलवर स्क्रीनच्या बाहेर जाणार नाही */
-  max-width: 600px;
-  height: 200px;
-  
-  filter: blur(60px); /* रंगांना मऊ (diffused) करण्यासाठी */
-  z-index: 0;
-  pointer-events: none;
-}
-
-.namediv h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3rem; /* जॉन डो प्रमाणे मोठा फॉन्ट */
-  /* font-weight: 900; */
-  color: white;
-  white-space: normal;        /* सर्वात महत्त्वाचे: यामुळे टेक्स्ट रॅप होईल */
-  overflow-wrap: break-word;  /* मोठे शब्द तोडण्यासाठी */
-  word-wrap: break-word;
-  margin: 0;
-  letter-spacing: 2px; /* अक्षरे एकमेकांच्या जवळ */
-  position: relative;
-  z-index: 1;
-  
-  /* नावावरची हलकी पांढरी चमक */
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
-}
-
-.webMaindiv{
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.webdiv1{
-  width: 50px;
-  height: 2px;
-  /* background-color:#0073d7; */
-  background-color:#0073d7a3;
-}
-
-.webdiv2{
-  font-size: 1.2rem;
-  /* color: #0073d7; */
-  color:#0073d7a3;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-p{
-  color: gray;
+/* पॅराग्राफ टेक्स्ट */
+p.description-text {
+  color: #a0a5b5;
   font-size: 16px;
-  margin: 5px;
-  white-space: normal !important;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  display: block;
+  margin: 20px auto;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
+/* स्किल्स (Spans) */
 .divspan { 
   display: flex;
   flex-wrap: wrap;      
   justify-content: center; 
   gap: 10px;      
+  margin-top: 15px;
+  width: 100%;
+  max-width: 600px;
 }
 
-span{
+span.name-bounce-only {
   display: inline-flex;
-  white-space: nowrap;
+  align-items: center;
   color: white;
   border: 1px solid rgb(70, 70, 70);
-  width: fit-content;
-  height: fit-content;
   padding: 10px 18px;
   border-radius: 20px;
-  margin: 5px !important;
-  /* margin-left: 10px !important;
-  margin-bottom: 15px; */
-  /* background-color: gray; */
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.4s cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 20px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+span.name-bounce-only:hover {
+  transform: scale(1.1);
+  color: #00a2ff;
+  border-color: #00a2ff;
+}
+
+/* बटन्सचा कंटेनर */
+.buttonmaindiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;              
+  width: 100%;
+  margin-top: 40px;
 }
 
 .box-1 { 
-  /* background-color: #0c0f16; */
   position: relative; 
 }
 
-.btn {
-  line-height: 50px;
-  text-align: center;
-  cursor: pointer;
-  display: flex;
-  justify-content: center; 
-  gap: 20px;
-  margin-top: 30px;
-  border-radius: 20px;
-}
-
-.btn-one {
-  color: #FFF;
-  transition: all 0.3s;
-  position: relative;
-  margin-top: 60px;
-}
-
 .btn-one button {
+  padding: 12px 40px;
+  background: rgba(67, 67, 67, 0.765);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
   transition: all 0.3s;
-}
-.btn-one::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  opacity: 0;
-  transition: all 0.3s;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-top-color: rgba(255,255,255,0.5);
-  border-bottom-color: rgba(255,255,255,0.5);
-  transform: scale(0.1, 1);
-}
-.btn-one:hover button {
-  letter-spacing: 2px;
-}
-.btn-one:hover::before {
-  opacity: 1; 
-  transform: scale(1, 1); 
-}
-.btn-one::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  transition: all 0.3s;
-}
-.btn-one:hover::after {
-  opacity: 0; 
-  transform: scale(0.1, 1);
 }
 
+.btn-one button:hover {
+  letter-spacing: 1px;
+  background: #0073d7;
+  box-shadow: 0 0 15px rgba(0, 115, 215, 0.4);
+}
+
+/* ॲनिमेशन एलिमेंट्स (फक्त मोठ्या स्क्रीनसाठी) */
 .divmove {
   position: absolute;
-  animation-name: myAnimation;
-  animation-iteration-count: infinite; 
-  animation-direction: alternate;
-  animation-duration: 4s;
-  top: 66px;
-  left: 73px;
+  animation: myAnimation 4s alternate infinite;
+  pointer-events: none;
 }
 
 @keyframes myAnimation {
-  0%   {  top:0px;left:0px;}
-  100%  {top:20px;left:0px; }
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(15px); }
 }
 
 .atom-icon-container {
-    position: absolute;
-    /* इमेजप्रमाणे पोझिशन ॲडजस्ट करा */
-    left: 10%; 
-    top: 20%;
-    z-index: 10; /* ग्लोच्या वर येण्यासाठी मोठा नंबर */
-     opacity: 0.5; 
+  left: 15%; 
+  top: 15%;
+  opacity: 0.3;
 }
-
 .atom-icon-container i {
-    color: #858484 !important; /* रंग पांढरा करा म्हणजे डार्क ग्लोवर दिसेल */
-    font-size: 20px;
-        margin-top: 150px;
-    margin-left: 460px;
+  color: #858484;
+  font-size: 30px;
 }
 
 .atom-icon-container-image {
-    color: #858484 !important; /* रंग पांढरा करा म्हणजे डार्क ग्लोवर दिसेल */
-    /* font-size: 50px; */
-        margin-top: 200px;
-    margin-left: 750px;
-    opacity: 0.3; 
-  
-  /* २. इमेज थोडी धुसर करण्यासाठी ब्लर */
-  filter: blur(1px) brightness(0.8); 
-  
-  /* ३. नावाच्या मागे किंवा बाजूला ठेवण्यासाठी */
-  position: absolute;
-  z-index: 1; /* हा ग्लोच्या खाली किंवा नावाच्या मागे राहील */
-  
-  /* ४. थोडा तिरका (Rotate) करा जेणेकरून तो नॅचरल वाटेल */
+  right: 15%; 
+  top: 20%;
+  opacity: 0.25;
   transform: rotate(-15deg);
-  
-  /* ५. स्मूथनेससाठी */
-  pointer-events: none; 
-  right: 10%; /* उजवीकडून १०% अंतरावर (बाहेर जाणार नाही) */
-  top: 25%;
 }
 
-.atom-icon-container-image img {
-  width: 50px; /* मोबाईलवर इमेजचा आकार थोडा लहान ठेवा */
+.rocketimg {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
   height: auto;
 }
 
+/* ==========================================================================
+   MEDIA QUERIES (रिस्पॉन्सिव्ह डिझाईन मॅजिक)
+   ========================================================================== */
 
-.buttonmaindiv{
-    display: flex;
-    justify-content: center; /* डेस्कटॉपवर बटन्स शेजारी आणि सेंटरला दिसतील */
-    flex-direction: row;
-    /* align-items: flex-end;   बटन्स खालच्या बाजूला अलाईन होतील */
-    gap: 30px;               /* दोन बटन्समधील अंतर */
-    width: 100%;
-    margin-top: 40px;
-    margin-bottom: 30px;
-}
-
-.rocketimg{
-  width: 110px;
-  height: 60px;
-  padding-left: 60px;
-  padding-top: 10px;
-}
-
-@media (max-width: 480px) {
-    /* सर्व तरंगणाऱ्या इमेजेस आणि आयकॉन्स लपवण्यासाठी */
-    .divmove, 
-    .atom-icon-container, 
-    .atom-icon-container-image,
-    .rocketimg,
-    .box-1 .divmove {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-    }
-
-    /* मुख्य कंटेनरमधून ओव्हरफ्लो काढण्यासाठी */
-    .maindiv {
-        overflow-x: hidden !important;
-        width: 100vw;
-    }
-}
-
-
-@media (max-width: 468px) {
-  .namediv {
-    display: block !important;
-    /* width: 100% !important; */
-    text-align: center !important;
+/* टॅब्लेट आणि डेस्कटॉपसाठी */
+@media (min-width: 768px) {
+  .maindiv {
+    padding: 60px;
   }
+}
 
-  .namediv h1 {
-    font-size: 2.2rem !important;
-    font-weight: 800 !important;
-    white-space: normal !important; 
-    display: inline-block !important; 
-    width: auto !important;
-    max-width: 250px !important;    
-    line-height: 1.2 !important;
-    word-break: break-word !important;
-  }
-
-  
+/* मोबाईल स्क्रीनसाठी (768px पेक्षा लहान स्क्रीन) */
+@media (max-width: 768px) {
+  /* तरंगणारे आणि स्क्रीनच्या बाहेर जाणारे एलिमेंट्स लपवले */
   .divmove, 
   .atom-icon-container, 
   .atom-icon-container-image,
   .rocketimg {
     display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
-    margin: 0 !important;
   }
 
-}
-
-@media(max-width: 465px){
-  p{
-  /* color: rgb(234, 232, 232); */
-  /* font-size: 16px; */
-  margin-left: 115px;
-  white-space: normal !important; 
-  display: inline-block !important; 
-  width: auto !important;
-  max-width: 250px !important;    
-  line-height: 1.2 !important;
-  word-break: break-word !important;
+  .hvr-float-shadow.main-name {
+    font-size: 2.2rem; /* मोबाईलवर नाव व्यवस्थित बसेल */
   }
 
-  .divspan:has(> span) { 
-    flex-direction: row;  /* एका ओळीत पण रॅपिंगसह */
-    flex-wrap: wrap !important;
+  p.description-text {
+    font-size: 14px;
     padding: 0 10px;
   }
 
- span{
-        margin-left: 5ps !important;
-        margin-right: 5ps !important;
-        font-size: 14px;        
-        padding: 8px 12px;
-    }
-}
-
-@media(max-height: 465px){
-  .btn .btn-one{
-    height: 12px;
+  .buttonmaindiv {
+    flex-direction: column; /* मोबाईलवर बटन्स एकाखाली एक येतील */
+    gap: 15px;
+    width: 100%;
   }
 
-  .hvr-float-shadow::before{
-    font-size: 16px !important;
-  }
-
-  .buttonmaindiv{
-    flex-direction: column !important;
-    align-items: center !important;  
-    /* gap: 20px !important;*/
-    margin-top: 80px;
-  }
-
-
-}
-
-.name-bounce-only {
-  display: inline-block;
-  vertical-align: middle;
-  cursor: pointer;
-  transition-duration: 0.5s;
-  color: white; /* नावाचा मूळ रंग */
-  text-decoration: none;
-}
-
-/* माऊस नेल्यावर बाऊन्स होणे */
-.name-bounce-only:hover {
-  transform: scale(1.2); /* नाव थोडे मोठे होईल */
-  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36); /* बाऊन्स होण्यासाठी */
-  color: #00a2ff; /* बाऊन्स होताना रंग बदलायचा असेल तर हा ठेवा, नको असल्यास काढून टाका */
-}
-
-.hvr-float-shadow {
-  display: inline-block;
-  vertical-align: middle;
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  position: relative;
-  transition-duration: 0.3s;
-  transition-property: transform;
-  cursor: pointer;
-  color: white;
-  font-size: 37px;
-  padding-left: 15px;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* २. सावलीसाठी (Shadow) खालचा लेयर */
-.hvr-float-shadow:before {
-  pointer-events: none;
-  position: absolute;
-  z-index: -1;
-  content: "";
-  top: 100%;
-  left: 5%;
-  height: 10px;
-  width: 90%;
-  opacity: 0;
-  font-size: 22px;
-  /* अर्धवर्तुळाकार सावली तयार करणे */
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-  transition-duration: 0.3s;
-  transition-property: transform, opacity;
-}
-
-/* ३. माऊस नेल्यावर नाव वर तरंगेल (Float) आणि सावली दिसेल */
-.hvr-float-shadow:hover, 
-.hvr-float-shadow:focus, 
-.hvr-float-shadow:active {
-  transform: translateY(-5px); /* नाव ५ पिक्सेल वर सरकेल */
-}
-
-.hvr-float-shadow:hover:before, 
-.hvr-float-shadow:focus:before, 
-.hvr-float-shadow:active:before {
-  opacity: 1;
-  transform: translateY(5px); /* सावली खाली येईल */
-}
-
-@media (min-width: 768px) {
-  .maindiv {
-    flex-direction: row; /* मोठ्या स्क्रीनवर आडवे दिसण्यासाठी */
-    justify-content: center;
+  .btn-one button {
+    width: 100%; /* बटण पूर्ण रुंदीचे होईल */
+    min-width: 250px;
   }
 }
 
 html, body {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-    margin: 0;
-    padding: 0;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
 }

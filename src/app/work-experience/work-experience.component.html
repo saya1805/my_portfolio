@@ -1,44 +1,50 @@
 <div class="maindiv">
     <h1>Core System Implementations</h1>
+    
     <div class="divcard">
         <div class="divcard2">
-            @for(workarr of workarray;track $index){
+            @for(workarr of workarray; track $index) {
                 <div class="cartdiv" [style.border]="'1px solid ' + workarr.border">
-                <div style="width: 100%">
-                <h2 [innerHTML]="workarr.project"></h2>
-                <div style="display: flex;justify-content: space-around;">
-                    <div>
-                        <p style="color: gray;font-size: 11px;">Performance</p>
-                        <p style="font-size: 11px;">{{workarr.performace}}</p>
-                        <div class="progress-container">
-        <div class="progress-bar" 
-             style="width: 50%;"
-             [style.background]="workarr.border">
-        </div>
-    </div>
+                    
+                    <div class="card-info-section">
+                        <h2 [innerHTML]="workarr.project"></h2>
+                        
+                        <div class="metrics-container">
+                            <div class="metric-box">
+                                <p class="metric-label">Performance</p>
+                                <p class="metric-value">{{workarr.performace}}</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 50%;" [style.background]="workarr.border"></div>
+                                </div>
+                            </div>
+
+                            <div class="metric-box">
+                                <p class="metric-label">Accessibility</p>
+                                <p class="metric-value">{{workarr.Accessibilty}}</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 70%;" [style.background]="workarr.border"></div>
+                                </div>
+                            </div>
+
+                            <div class="metric-box">
+                                <p class="metric-label">{{workarr.Matrix}}</p>
+                                <p class="metric-value">{{workarr.matrixnumber}}</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 50%;" [style.background]="workarr.border"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="tech-list">
+                            <li>{{workarr.Technical}}</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-image-section">
+                        <img src="../../assets/codingImg.png" class="imagecss" alt="Project Coding View">
                     </div>
 
-                    <div><p style="color: gray;font-size: 11px;">Accessibilty</p><p style="font-size: 11px;">{{workarr.Accessibilty}}</p>
-                      <div class="progress-container">
-        <div class="progress-bar" 
-             style="width: 70%;" 
-             [style.background]="workarr.border">
-        </div>
-    </div></div>
-                    <div><p style="color: gray;font-size: 11px;">{{workarr.Matrix}}</p><p style="font-size: 11px;">{{workarr.matrixnumber}}</p>
-                      <div class="progress-container">
-        <div class="progress-bar" 
-             style="width: 50%;"
-             [style.background]="workarr.border">
-        </div>
-    </div></div>
                 </div>
-                <ul>{{workarr.Technical}}</ul>
-                </div>
-                 <div>
-                    <img src="../../assets/codingImg.png" class="imagecss">
-                 </div>
-                 </div>
             }
         </div>
     </div>

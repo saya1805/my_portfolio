@@ -1,125 +1,143 @@
-.maindiv{
-    padding-top: 70px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* मुख्य कंटेनर */
+.maindiv {
+    padding: 60px 20px;
     background-image: url(../../assets/background.png);
-    /* background-image: url('तुमच्या-इमेजचा-पाथ'); */
-    background-size: cover;      /* इमेज कापता कामा नये आणि पूर्ण जागा व्यापली पाहिजे */
-    background-position: center; /* इमेज मध्यभागी ठेवण्यासाठी */
+    background-size: cover;      
+    background-position: center; 
     background-repeat: no-repeat;
-    height:fit-content;               /* किंवा तुम्हाला हवी तेवढी उंची */
+    min-height: 100vh;
     width: 100%;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    height: fit-content;
     margin: 0;
-    padding: 0;
     overflow-x: hidden;
-  }
+    box-sizing: border-box;
+}
 
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-  h1{
+h1 {
     color: white;
     text-align: center;
-    margin-bottom: 30px;
-    /* font-weight: 600; */
+    margin-bottom: 40px;
     font-family: 'Poppins', sans-serif;
-    /* margin-top: 160px; */
-  }
+    font-weight: 700;
+}
 
-.arraydiv{
+/* कार्ड्सचा मुख्य साचा (Flex Container) */
+.arraydiv {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-    justify-content: center;
-    width: fit-content;
-    height: fit-content;
-    border-radius: 20px;
+    justify-content: center; /* सर्व कार्ड्स स्क्रीनच्या मध्यभागी ठेवण्यासाठी */
+    width: 100%;
+    max-width: 1200px; /* मोठ्या स्क्रीनवर जास्त पसरू नये म्हणून */
+    margin: 0 auto; /* सेंटर अलाईनमेंटसाठी */
     color: white;
-    margin-left: 114px;
+    box-sizing: border-box;
 }
 
-@keyframes move-stripes {
-    from {
-        background-position: 0 0; 
-    }
-    to {
-        background-position: 40px 0;
-    }
-}
-
-.arrdiv2{
-    /* background-color:rgba(33, 38, 45); */
+/* प्रत्येक वैयक्तिक कार्ड (Tech Card) */
+.arrdiv2 {
+    background-color: rgba(33, 38, 45, 0.4); /* काचेसारखा हलका डार्क इफेक्ट */
+    backdrop-filter: blur(5px);
     width: 320px;
-    /* height: 265px; */
     min-height: 265px; 
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
 }
 
-.arraydiv3{
+.arrdiv2:hover {
+    transform: translateY(-5px); /* माऊस नेल्यावर हलका वर उठेल */
+}
+
+/* कार्डच्या आतील हेडर */
+.arraydiv3 {
     display: flex;
-    padding-top: 10px;
-    gap: 8px;
+    padding-bottom: 15px;
+    gap: 10px;
     align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* फिकट बॉर्डर रेष */
 }
 
-.imgfield{
-    width: 20px;
-    height: 20px;
+.imgfield {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-.textfield{
+.textfield {
     color: white;
-    text-align: center;
-    /* font-weight: 600; */
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+}
+
+/* प्रत्येक स्किलचा ग्रुप */
+.skill-item-container {
+    margin-top: 15px;
+}
+
+.array2div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px; /* प्रोग्रेस बारच्या वर थोडी जागा */
+    margin: 10px 2px 5px 2px;
     font-family: 'Poppins', sans-serif;
 }
 
-.array2div{
-    display: flex;
-    justify-content: space-between;
-    margin: 15px 5px 5px 5px;
-     font-family: 'Poppins', sans-serif;
+.array2langtext {
+    font-size: 13px;
+    font-weight: 400;
+    color: #e1e7ef;
 }
 
-.array2langtext{
-    font-size: 10px;
+.array2percent {
+    font-size: 12px;
+    /* color: #0073d7; */
+    font-weight: 600;
 }
 
-.array2percent{
-    font-size: 9px;
-    color: white;
-}
-
-.array2progess1{
-    width:100%;
+/* प्रोग्रेस बारची मागची ग्रे रेष */
+.array2progess1 {
+    width: 100%;
     height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.array2progess2{
-    height:100%
+/* प्रोग्रेस बारची भरणारी एक्चुअल रेष (Color Fill) */
+.array2progess2 {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
 }
 
+/* ==========================================================================
+   MEDIA QUERIES (मोबाईल रिस्पॉन्सिव्ह डिझाईन)
+   ========================================================================== */
 
-@media (max-width: 568px) {
+@media (max-width: 768px) {
+    .maindiv {
+        padding: 40px 15px;
+    }
+
     h1 {
-        font-size: 1.5rem;
-        margin-top: 30px;
+        font-size: 1.8rem;
+        margin-bottom: 25px;
     }
 
     .arraydiv {
         gap: 20px;
-        padding: 10px;
-        margin-left: 0; /* मोबाईलवर मार्जिन ० करा */
+        padding: 0;
     }
 
     .arrdiv2 {
-        width: 100%; /* मोबाईलवर कार्ड पूर्ण विड्थ घेईल */
-        max-width: 350px;
+        width: 100%; /* मोबाईल स्क्रीननुसार पूर्ण रुंदी घेईल */
+        max-width: 340px; /* पण दिसायला जास्त मोठे वाटणार नाही */
+        min-height: auto; /* आवश्यकतेनुसार उंची वाढेल */
+        padding: 15px;
     }
 }
-  

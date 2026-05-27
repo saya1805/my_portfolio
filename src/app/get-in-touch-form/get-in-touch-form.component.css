@@ -1,94 +1,153 @@
-.maindiv{
-  padding-top: 30px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* मुख्य बॅकग्राउंड */
+.maindiv {
+  padding: 60px 20px 80px 20px;
   background-image: url(../../assets/background.png);
-  /* background-image: url('तुमच्या-इमेजचा-पाथ'); */
-  background-size: cover;      /* इमेज कापता कामा नये आणि पूर्ण जागा व्यापली पाहिजे */
-  background-position: center; /* इमेज मध्यभागी ठेवण्यासाठी */
+  background-size: cover;      
+  background-position: center; 
   background-repeat: no-repeat;
-  height: fit-content;
-  padding-bottom: 80px;
+  min-height: 100vh;
+  width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-p{
-  font-size: 12px;
+h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  font-weight: 700;
 }
 
-h1{
-    /* font-weight: bold; */
-    color: white;
-    /* letter-spacing: 5px; */
-    position: relative;
-    text-align: center;
+/* बॉक्स सेंटरला आणण्यासाठी */
+.contact-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-h2{
-  font-weight: 400;
-  font-size: 24px;
-  margin-left: 10px;
-  font-family: cursive;
-}
-
-h3{
-    font-size: 23px;
-    color: #03A9F4;
-    margin: 10px 0;
-    font-family: cursive;
-}
-
+/* फिरणारी बॉर्डर असलेला मुख्य बॉक्स */
 .boxdiv {
   position: relative;
-  width: 90%;          /* मोबाईलवर स्क्रीनच्या ९०% रुंदी घेईल */
-  max-width: 400px;
+  width: 100%;
+  max-width: 420px; /* डेस्कटॉपवर बॉक्सची कडक साईझ */
   background-color: #232323;
   color: white;
-  padding: 25px;
+  padding: 35px 25px;
   overflow: hidden;
   border-radius: 15px;
   box-sizing: border-box;
-  box-shadow: 0px 0px 20px 5px rgba(55, 131, 189, 0.8), 0px 0px 50px 15px rgba(42, 60, 173, 0.4);
+  box-shadow: 0px 0px 20px 5px rgba(55, 131, 189, 0.6), 0px 0px 50px 15px rgba(42, 60, 173, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* फिरत्या ग्लोचा लेअर */
 .boxdiv::before {
   content: '';
   position: absolute;
-  width: 200%; /* बॉक्सपेक्षा मोठा आकार */
-  height: 150%;
+  width: 250%; /* मोबाईलवर फिरताना कोपरे सुटू नयेत म्हणून वाढवले */
+  height: 250%;
   background-image: conic-gradient(transparent, transparent, transparent, #50dfdb);
   animation: rotate-border 6s linear infinite;
+  z-index: 0;
 }
 
-.email-btn {
-  width: fit-content;
-  background-color: white;
-  color: rgba(55, 131, 189, 0.8);
-  padding: 8px 15px;
-  border-radius: 20px;
-  margin: 20px auto 0; /* margin-left: 110px काढून 'auto' केले */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-/* मधला भाग झाकण्यासाठी जेणेकरून फक्त कडेची बॉर्डर दिसेल */
+/* आतील डार्क भाग (बॉर्डरची जाडी ठरवतो) */
 .boxdiv::after {
   content: '';
   position: absolute;
-  inset: 4px; /* ही तुमच्या बॉर्डरची जाडी असेल */
-  background: #232323;
-  border-radius: 10px;
+  inset: 3px; /* ३ पिक्सेल जाडीची बॉर्डर */
+  background: #1a1a1a; /* थोडा अजून डार्क करून प्रीमियम लुक दिला */
+  border-radius: 12px;
   z-index: 1;
 }
 
-/* मजकूर वर दिसण्यासाठी */
+/* मुख्य डेटा जो ग्लोच्या वर दिसेल */
 .content-area {
   position: relative;
   z-index: 2;
   text-align: center;
+  width: 100%;
+}
+
+/* कार्ड हेडर */
+.card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.header-gif {
+  border-radius: 8px;
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: white;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.desc-text {
+  font-size: 14px;
+  color: #cccccc;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+/* ईमेल आयडी टेक्स्ट */
+.email-text {
+  font-size: 1.25rem;
+  color: #03A9F4;
+  margin: 10px 0;
+  font-weight: 600;
+  word-break: break-all; /* मोबाईलवर ईमेल बाहेर जाणार नाही */
+}
+
+.sub-text {
+  font-size: 12px;
+  color: #888888;
+  margin: 0 0 25px 0;
+}
+
+/* ईमेल बटन */
+.email-btn {
+  width: fit-content;
+  background-color: white;
+  color: #03A9F4;
+  padding: 10px 24px;
+  border-radius: 25px;
+  margin: 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.email-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(3, 169, 244, 0.4);
+}
+
+.btn-text {
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 /* फिरण्याचे ॲनिमेशन */
@@ -97,8 +156,38 @@ h3{
   100% { transform: rotate(360deg); }
 }
 
+/* ==========================================================================
+   MEDIA QUERIES (मोबाईल व्ह्यू मॅजिक)
+   ========================================================================== */
+
 @media (max-width: 480px) {
-  h2 { font-size: 18px; }
-  h3 { font-size: 16px; word-break: break-all; } /* मोठा ई-मेल आयडी तोडण्यासाठी */
-  p { font-size: 11px; }
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .boxdiv {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .desc-text {
+    font-size: 12px;
+  }
+
+  .email-text {
+    font-size: 1.05rem; /* मोबाईलवर ईमेल आयडी बॉक्सच्या आत फिट बसेल */
+  }
+
+  .sub-text {
+    font-size: 11px;
+  }
+  
+  .email-btn {
+    padding: 8px 20px;
+    width: 80%; /* मोबाईलवर बटन क्लिक करायला सोपे होईल */
+  }
 }

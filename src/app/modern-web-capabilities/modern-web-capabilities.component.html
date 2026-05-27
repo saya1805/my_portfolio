@@ -1,14 +1,15 @@
 <div class="maindiv">
     <div class="arraydiv">
-    <h1>Modern Web Capbilities</h1> 
-        <div style="display: flex;justify-content: space-evenly;flex-wrap: wrap;">
-    @for(modern of moderArr;track $index){
-        <div [style.border]="'1px solid ' + modern.border" style="width: 300px;height: fit-content;padding: 15px 0px 15px 15px;margin-bottom: 50px;border-radius: 20px;">
-        <img [src]="modern.modernImg" class="imgMove">
-        <p style="color: white;font-size: 15px;font-weight: 600;">{{modern.label}}</p>
-        <p style="color: rgb(181, 181, 181);font-size: 11px;white-space: pre-wrap;">{{modern.keyPoints}}</p>
+        <h1>Modern Web Capabilities</h1> 
+        
+        <div class="cards-flex-container">
+            @for(modern of moderArr; track $index) {
+                <div class="modern-card" [style.border]="'1px solid ' + modern.border">
+                    <img [src]="modern.modernImg" class="imgMove" alt="capability-icon">
+                    <p class="card-label">{{modern.label}}</p>
+                    <p class="card-points">{{modern.keyPoints}}</p>
+                </div>
+            }
         </div>
-    }
-    </div>
     </div>
 </div>
